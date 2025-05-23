@@ -58,7 +58,7 @@ build_suckless st
 
 # Install ly (display manager)
 echo "Installing ly..."
-git clone https://github.com/fairyglade/ly "$TEMP_DIR/ly"
+git clone --recurse-submodules https://github.com/fairyglade/ly "$TEMP_DIR/ly"
 cd "$TEMP_DIR/ly"
 make
 sudo make install installsystemd

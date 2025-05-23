@@ -16,7 +16,7 @@ cleanup() {
 trap cleanup ERR
 
 # Dependencies
-sudo pacman -S --needed --noconfirm base-devel git xorg xorg-xinit libxft libxinerama freetype2 harfbuzz acpi alsa-utils
+sudo pacman -S --needed --noconfirm base-devel git xorg xorg-xinit libxft libxinerama freetype2 harfbuzz acpi alsa-utils unzip
 
 # Install a Nerd Font (JetBrainsMono Nerd Font as example)
 echo "Installing Nerd Font..."

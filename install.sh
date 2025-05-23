@@ -16,7 +16,7 @@ cleanup() {
 trap cleanup ERR
 
 # Dependencies
-sudo pacman -S --needed --noconfirm base-devel git xorg xorg-xinit libxft libxinerama freetype2 harfbuzz acpi alsa-utils unzip
+sudo pacman -S --needed --noconfirm base-devel git xorg xorg-xinit libxft libxinerama freetype2 harfbuzz acpi alsa-utils unzip ncurses pam
 
 # Install a Nerd Font (JetBrainsMono Nerd Font as example)
 echo "Installing Nerd Font..."
@@ -58,7 +58,7 @@ build_suckless st
 
 # Install ly (display manager)
 echo "Installing ly..."
-git clone --recurse-submodules https://github.com/fairyglade/ly "$TEMP_DIR/ly"
+git clone --depth=1 --recurse-submodules https://github.com/fairyglade/ly "$TEMP_DIR/ly"
 cd "$TEMP_DIR/ly"
 make
 sudo make install installsystemd

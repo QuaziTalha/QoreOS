@@ -57,13 +57,9 @@ build_suckless dmenu
 build_suckless st
 
 # Install ly (display manager)
-echo "Installing ly..."
-git clone --depth=1 --recurse-submodules https://github.com/fairyglade/ly "$TEMP_DIR/ly"
-cd "$TEMP_DIR/ly"
-make
-sudo make install installsystemd
+echo "Installing ly from package manager..."
+sudo pacman -S --noconfirm ly
 sudo systemctl enable ly
-cd - >/dev/null
 
 # Move sources to ~/qoreos for future use
 mkdir -p "$FINAL_DIR"
